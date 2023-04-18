@@ -1,0 +1,38 @@
+<odoo>
+	<record model="ir.ui.view" id="action_vista_dispositivo_tree">
+		<field name="name">registro.dispositivo.tree</field>
+		<field name="model">dispositivo.gestiondirecciones</field>
+		<field name="arch" type="xml">
+			<tree string="Tabla de dispositivos">
+
+				<field name="name" />
+				<field name="modelo"/>
+				<field name="serie"/>
+				<field name="description" />
+
+			</tree>
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="action_vista_dispositivo_form">
+		<field name="name">registro.dispositivo.form</field>
+		<field name="model">dispositivo.gestiondirecciones</field>
+		<field name="arch" type="xml">
+			<form string="Formulario de dispositivos">
+				<sheet>
+					<group colspan="2">
+						<group>
+							<field name="name" />
+							<field name="modelo"/>
+							<field name="serie"/>
+						</group>
+						<group>
+							<field name="description" />
+							
+						</group>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+</odoo>

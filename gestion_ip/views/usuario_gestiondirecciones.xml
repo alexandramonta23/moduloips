@@ -1,0 +1,51 @@
+<odoo>
+	<record model="ir.ui.view" id="action_vista_usuario_tree">
+		<field name="name">registro.usuario.tree</field>
+		<field name="model">usuario.gestiondirecciones</field>
+		<field name="arch" type="xml">
+			<tree string="Tabla de usuarios">
+				<field name="usuario" />
+				<field name="apellidos_nombres" />
+				<field name="name" />
+				<field name="cedula" />
+				<field name="ext_telefonica" />
+				<field name="email_trabajo" />
+				<field name="permiso_navegacion" />
+				<field name="direccion" />
+				<field name="estructura_salarial" />
+				<field name="oficina" />
+				<field name="estado_user" />
+				<field name="descripcion" />
+			</tree>
+		</field>
+	</record>
+	
+	<record model="ir.ui.view" id="action_vista_usuario_form">
+		<field name="name">registro.usuario.form</field>
+		<field name="model">usuario.gestiondirecciones</field>
+		<field name="arch" type="xml">
+			<form string="Formulario de usuarios">
+				<sheet>
+					<group colspan="2">
+						<group>
+							<field name="usuario" />
+							<field name="apellidos_nombres" />
+							<field name="name" />
+							<field name="cedula" />
+							<field name="ext_telefonica" />
+							<field name="email_trabajo" />
+						</group>
+						<group>
+							<field name="permiso_navegacion"/>
+							<field name="direccion" />
+							<field name="estructura_salarial" />
+							<field name="oficina" />
+							<field name="estado_user" widget="radio" options="{'horizontal': true}"/>
+							<field name="descripcion" attrs="{'invisible': [('estado_user', '==', 'activo')]}"/>
+						</group>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+</odoo>

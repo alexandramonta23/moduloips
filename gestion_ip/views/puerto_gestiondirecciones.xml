@@ -1,0 +1,36 @@
+<odoo>
+	<record model="ir.ui.view" id="action_vista_puerto_tree">
+		<field name="name">registro.puerto.tree</field>
+		<field name="model">puerto.gestiondirecciones</field>
+		<field name="arch" type="xml">
+			<tree string="Tabla de Puertos">
+				<field name="id_switch_2" />
+				<field name="name" />
+				<field name="hostname_del_usuario" />
+				<field name="estado_puerto" />
+				<!-- <field name="id_switch" /> -->
+			</tree>
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="action_vista_puerto_form">
+		<field name="name">registro.puerto.form</field>
+		<field name="model">puerto.gestiondirecciones</field>
+		<field name="arch" type="xml">
+			<form string="Formulario de puertos">
+				<sheet>
+					<group colspan="2">
+						<group>
+							<field name="id_switch_2" />
+							<field name="name" />
+							<field name="hostname_del_usuario"  invisible="1"/>
+							<field name="estado_puerto" />
+							<!-- <field name="id_switch" />
+							<field name="ip_switch" /> -->
+						</group>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+</odoo>

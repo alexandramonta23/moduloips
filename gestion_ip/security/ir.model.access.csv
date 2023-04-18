@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+acceso_control,control.gestiondirecciones,model_control_gestiondirecciones,,1,1,1,1
+acceso_usuario,usuario.gestiondirecciones,model_usuario_gestiondirecciones,,1,1,1,1
+acceso_ip,ip.gestiondirecciones,model_ip_gestiondirecciones,,1,1,1,1
+acceso_vlan,vlan.gestionvlan,model_vlan_gestionvlan,,1,1,1,1
+acceso_direccion,direccion.gestiondirecciones,model_direccion_gestiondirecciones,,1,1,1,1
+acceso_switch,switch.gestiondirecciones,model_switch_gestiondirecciones,,1,1,1,1
+acceso_puerto,puerto.gestiondirecciones,model_puerto_gestiondirecciones,,1,1,1,1
+acceso_dispositivo,dispositivo.gestiondirecciones,model_dispositivo_gestiondirecciones,,1,1,1,1
+
+

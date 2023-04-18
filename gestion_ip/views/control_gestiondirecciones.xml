@@ -1,0 +1,100 @@
+<odoo>
+	<record model="ir.ui.view" id="action_vista_control_tree">
+		<field name="name">registro.control.tree</field>
+		<field name="model">control.gestiondirecciones</field>
+		<field name="arch" type="xml">
+			<tree string="Tabla de control">
+				<!-- 
+				<header>
+					<button
+						name="leyenda"
+						string="Imprimir Reporte PDF"
+						type="object"
+					/>
+				</header> -->
+				<field name="piso" />  
+				<field name="cod_usuario" />  
+				<field name="usuario_host" />  
+				<!-- optional="hide" -->
+				<field name="dispositivo_asig" />  <!-- attrs="{'invisible': [('piso', '==', '12')]}" -->
+				<field name="vlan_asig" />
+				<field name="cod_ip" />
+				<field name="funcionario" /> 
+				<field name="observaciones" />
+				<field name="ip" optional="hide" />
+			</tree>		
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="action_vista_control_form">
+		<field name="name">registro.control.form</field>
+		<field name="model">control.gestiondirecciones</field>
+		<field name="arch" type="xml">
+			<form string="Formulario de control">
+				<sheet>
+					<group colspan="2">
+						<group>
+							<field name="h_d" widget="radio" options="{'horizontal': true}"/>
+							<field name="cod_usuario" attrs="{'invisible': [('h_d', '==', 'dispositivo')]}"/>
+							<field name="funcionario" attrs="{'invisible': [('h_d', '==', 'dispositivo')]}"/>
+							<field name="usuario_host" attrs="{'invisible': [('h_d', '==', 'dispositivo')]}"/>
+							<field name="dispositivo_asig" attrs="{'invisible': [('h_d', '==', 'hostname')]}"/>
+								
+							<field name="piso"/>
+							<field name="num_switch" attrs="{'invisible': [('h_d', '==', 'dispositivo')]}"/>
+							<field name="ip_switch_swtch" attrs="{'invisible': [('h_d', '==', 'dispositivo')]}"/>
+							<field name="puert_disp_switch" attrs="{'invisible': [('h_d', '==', 'dispositivo')]}"/>
+							<field name="asignar_puerto" attrs="{'invisible': [('h_d', '==', 'dispositivo')]}"/>
+						</group>
+
+						<group>
+							<field name="vlan_asig" />
+							<field name="cod_ip"/>																		
+							<field name="ip" invisible="1"/>																		
+							<field name="vlan_o" invisible="1"/>	
+							<field name="observaciones" />
+							<field name="obtener_hostname" invisible="1"/>
+							<field name="obtener_numero_switch" invisible="1"/>
+						</group>
+					</group>
+				</sheet>
+
+				<!-- <sheet>
+					<button
+						name="print_report"
+						string="Imprimir Reporte PDF"
+						type="object"
+					/>
+				</sheet> -->
+
+			</form>
+		</field>
+	</record>
+
+</odoo>
+
+<!-- <footer>
+	<button
+		name="print_report"
+		string="Imprimir Reporte PDF"
+		type="object"
+		class="btn-secondary"
+	/>
+</footer> -->
+
+<!-- <button
+		name="print_report"
+		string="Imprimir Reporte PDF"
+		type="object"
+	/> -->
+
+<!-- <t t-foreach="h_d" t-as="det">
+	<t t-if="det == 'hostname'">
+		<field name="cod_usuario" invisible="0"/>
+		<field name="dispositivo_asig" invisible="1"/>
+	</t>
+	<t t-if="det == 'dispositivo'">
+		<field name="cod_usuario" invisible="1"/>
+		<field name="dispositivo_asig" invisible="0"/>
+	</t>
+</t> -->

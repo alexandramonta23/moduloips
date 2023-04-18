@@ -1,0 +1,49 @@
+<odoo>
+
+    <record model="ir.ui.view" id="action_vista_vlan_tree">
+        <field name="name">registro.vlan.tree</field>
+        <field name="model">vlan.gestionvlan</field>
+        <field name="arch" type="xml">
+            <tree string="Tabla de Vlans">
+                
+                <field name="name" />
+                <field name="direccion_departamental" />
+                <field name="siglas" />
+                <field name="responsable" />
+
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="action_vista_vlan_form">
+        <field name="name">registro.vlan.form</field>
+        <field name="model">vlan.gestionvlan</field>
+        <field name="arch" type="xml">
+            <form string="Formulario de Vlans">
+                <sheet>
+                    <group colspan="2">
+                        <group>
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <field name="direccion_departamental" />
+                            <field name="siglas" />
+                            <field name="responsable" />
+                        </group>
+                    </group>
+
+                </sheet>
+                <!-- <sheet>
+                    <group>
+                        <field name="cod_ip">
+                            <tree>
+                                <field name="cod_vlan"/>    
+                                <field name="name"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet> -->
+            </form>
+        </field>
+    </record>
+</odoo>

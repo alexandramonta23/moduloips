@@ -1,0 +1,47 @@
+<odoo>
+    <data>
+        <report id="report_asign"
+            string="Reporte - Dispositivos"
+            model="dispositivo.gestiondirecciones"
+            report_type="qweb-pdf"
+            name="gestion_ip.report_asign_ip"
+            menu="True"
+            print_report_name="'Reporte - Dispositivos'"
+        />
+
+        <template id="report_asign_ip">
+            <t t-call="web.html_container">
+                
+                    <t t-call="web.external_layout">
+                        <div class="page" style="font-size:18px">
+                            <div class="row">
+                                <div class="col-md-12" align="center">
+                                    <h2>Reporte - Dispositivos</h2>
+                                </div>
+                            </div>
+                            
+                            <br/>
+                            <table  style="border-collapse: collapse;">
+                                <tbody>
+                                  <tr style="border-bottom: 3px solid black;">
+                                    <th style="background-color: #C6C6C6; padding: 10px; text-align: center">Nombre dispositivo</th>
+                                    <th style="background-color: #C6C6C6; padding: 10px; text-align: center">Modelo</th>
+                                    <th style="background-color: #C6C6C6; padding: 10px; text-align: center">Serie</th>
+                                    <th style="background-color: #C6C6C6; padding: 10px; text-align: center">Descripción</th>
+                                  </tr>
+                                  <t t-foreach="docs" t-as="o">
+                                  <tr>
+                                        <td style="border-collapse: collapse; padding: 10px; text-align: center"><span t-field="o.name"/></td>
+                                        <td style="border-collapse: collapse; padding: 10px; text-align: center"><span t-field="o.modelo"/></td>
+                                        <td style="border-collapse: collapse; padding: 10px; text-align: center"><span t-field="o.serie"/></td>
+                                        <td style="border-collapse: collapse; padding: 10px; text-align: center"><span t-esc="o.description"/></td>
+                                  </tr>
+                                </t>
+                                </tbody>
+                              </table>
+                        </div>
+                    </t>
+            </t>
+        </template>
+    </data>
+</odoo>

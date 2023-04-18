@@ -1,0 +1,36 @@
+<!-- <odoo>
+	<record model="ir.ui.view" id="report">
+		<field name="name">asignariptree</field>
+		<field name="model">asignar.ip</field>
+		<field name="arch" type="xml">
+
+			<tree string="Tabla de control">
+				<field name="usuario" /> 
+				<field name="nom_dispo" /> 
+				<field name="obs" /> 
+			</tree>
+			
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="report_form">
+		<field name="name">asignaripform</field>
+		<field name="model">asignar.ip</field>
+		<field name="arch" type="xml">
+			<form string="Formulario de control">
+				<sheet>
+					<group colspan="2">
+						<group>
+							<field name="usuario" /> 
+							<field name="nom_dispo" /> 
+							<field name="ip_disp" /> 
+							<field name="obs" /> 
+							
+						</group>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+</odoo> -->

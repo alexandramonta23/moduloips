@@ -1,0 +1,44 @@
+<odoo>
+    <data>
+        <report id="report_ip"
+            string="Ip's asignadas/disponibles/inactivas por Vlan"
+            model="ip.gestiondirecciones"
+            report_type="qweb-pdf"
+            name="gestion_ip.report_ip_template"
+            menu="True"
+            print_report_name="'Ips asignadas/disponibles/inactivas por Vlan'"
+        />
+
+        <template id="report_ip_template">
+            <t t-call="web.html_container">
+                    <t t-call="web.external_layout">
+                        <div class="page" style="font-size:18px">
+                            <div class="row">
+                                <div class="col-md-12" align="center">
+                                    <h2>IPs disponibles/ocupadas por Vlan</h2>
+                                </div>
+                            </div>
+                            
+                            <br/>
+                            <table  style="border-collapse: collapse;">
+                                <tbody>
+                                  <tr style="border-bottom: 3px solid black;">
+                                    <th style="background-color: #C6C6C6; padding: 10px; text-align: center">Vlan</th>
+                                    <th style="background-color: #C6C6C6; padding: 10px; text-align: center">Direccion IP</th>
+                                    <th style="background-color: #C6C6C6; padding: 10px; text-align: center">Disponible</th>
+                                  </tr>
+                                  <t t-foreach="docs" t-as="o">
+                                    <tr>
+                                        <td style="border-collapse: collapse; padding: 10px; text-align: center"><span t-field="o.cod_vlan"/></td>
+                                        <td style="border-collapse: collapse; padding: 10px; text-align: center"><span t-field="o.ip"/></td>
+                                        <td style="border-collapse: collapse; padding: 10px; text-align: center"><span t-esc="o.disponible2"/></td>
+                                    </tr>
+                                   </t>
+                                </tbody>
+                              </table>
+                        </div>
+                    </t>
+            </t>
+        </template>
+    </data>
+</odoo>

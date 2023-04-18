@@ -1,0 +1,54 @@
+<odoo>
+    <data>
+        <report id="report_custom"
+            string="Dispositivos Asignados con IP/IPS asignados por usuarios(Hostname)"
+            model="control.gestiondirecciones"
+            report_type="qweb-pdf"
+            name="gestion_ip.report_custom_template"
+            print_report_name="'Dispositivos Asignados con IP/IPS asignados por usuarios(Hostname)'"
+        />
+
+        <template id="report_custom_template">
+            <t t-call="web.html_container">
+                    <t t-call="web.external_layout">
+                        <div class="page" style="font-size:18px">
+                            <div class="row">
+                                <div class="col-md-12" align="center">
+                                    <h2>Reporte - Dispositivos Asignados con IP</h2>
+                                    <h2>Reporte - IPS asignados por usuarios(Hostname)</h2>
+                                </div>
+                            </div>
+                            
+                            <br/>
+                            <table  style="border-collapse: collapse;">
+                                <tbody>
+                                  <tr style="border-bottom: 3px solid black;">
+                                    <th style="background-color: #C6C6C6; padding: 10px; text-align: center">Piso</th>
+                                    <th style="background-color: #C6C6C6; padding: 10px; text-align: center">Hostname</th>
+                                    <th style="background-color: #C6C6C6; padding: 10px; text-align: center">Usuario del Host</th>
+                                    <th style="background-color: #C6C6C6; padding: 10px; text-align: center">Dispositivo</th>
+                                    <th style="background-color: #C6C6C6; padding: 10px; text-align: center">Vlan</th>
+                                    <th style="background-color: #C6C6C6; padding: 10px; text-align: center">IP</th>
+                                    <th style="background-color: #C6C6C6; padding: 10px; text-align: center">Funcionario</th>
+                                    <th style="background-color: #C6C6C6; padding: 10px; text-align: center">Observaciones</th>
+                                  </tr>
+                                  <t t-foreach="docs" t-as="det">
+                                  <tr>
+                                        <td style="border-collapse: collapse; padding: 10px; text-align: center"><span t-field="det.piso"/></td>
+                                        <td style="border-collapse: collapse; padding: 10px; text-align: center"><span t-field="det.cod_usuario"/></td>
+                                        <td style="border-collapse: collapse; padding: 10px; text-align: center"><span t-field="det.usuario_host"/></td>
+                                        <td style="border-collapse: collapse; padding: 10px; text-align: center"><span t-field="det.dispositivo_asig"/></td>
+                                        <td style="border-collapse: collapse; padding: 10px; text-align: center"><span t-field="det.vlan_asig"/></td>
+                                        <td style="border-collapse: collapse; padding: 10px; text-align: center"><span t-field="det.cod_ip"/></td>
+                                        <td style="border-collapse: collapse; padding: 10px; text-align: center"><span t-field="det.funcionario"/></td>
+                                        <td style="border-collapse: collapse; padding: 10px; text-align: center"><span t-field="det.observaciones"/></td>                                       
+                                  </tr>
+                                </t> 
+                                </tbody>
+                              </table>
+                        </div>
+                    </t>
+            </t>
+        </template>
+    </data>
+</odoo>

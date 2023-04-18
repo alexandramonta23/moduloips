@@ -1,0 +1,94 @@
+<odoo>
+	<record model="ir.actions.act_window" id="action_list_direccion">
+		<field name="name">Direcciones</field>
+		<field name="res_model">direccion.gestiondirecciones</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<record model="ir.actions.act_window" id="action_list_usuario">
+		<field name="name">Usuarios</field>
+		<field name="res_model">usuario.gestiondirecciones</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<record model="ir.actions.act_window" id="action_list_dispositivo">
+		<field name="name">Registro de dispositivos</field>
+		<field name="res_model">dispositivo.gestiondirecciones</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<record model="ir.actions.act_window" id="action_list_vlan">
+		<field name="name">Vlans</field>
+		<field name="res_model">vlan.gestionvlan</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<record model="ir.actions.act_window" id="action_list_ip">
+		<field name="name">Ips</field>
+		<field name="res_model">ip.gestiondirecciones</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+	<record model="ir.actions.act_window" id="action_list_switch">
+		<field name="name">Switches</field>
+		<field name="res_model">switch.gestiondirecciones</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+	<record model="ir.actions.act_window" id="action_list_puerto">
+		<field name="name">Puertos</field>
+		<field name="res_model">puerto.gestiondirecciones</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<record model="ir.actions.act_window" id="action_list_control">
+		<field name="name">Registro de asignaciones</field>
+		<field name="res_model">control.gestiondirecciones</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+	<!-- <record model="ir.actions.act_window" id="action_list_asignar_ip">
+		<field name="name">Asignar dispositivos con Usuarios</field>
+		<field name="res_model">asignar.ip</field>
+		<field name="view_mode">tree,form</field>
+	</record> -->
+
+	<record model="ir.actions.act_window" id="action_list_reporte1">
+		<field name="name">Ip's asignadas/disponibles/inactivas por Vlan</field>
+		<field name="res_model">ip.gestiondirecciones</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+	<record model="ir.actions.act_window" id="action_list_reporte2">
+		<field name="name">Hostname's asignados con IP</field>
+		<field name="res_model">control.gestiondirecciones</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+	<record model="ir.actions.act_window" id="action_list_reporte3">
+		<field name="name">Dispositivos asignados con IP</field>
+		<field name="res_model">control.gestiondirecciones</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+
+
+	<menuitem id="menu_principal" name="Asignación de IP"/>
+
+	<menuitem id="menu_principal_registros" name="Registros" parent="menu_principal"/>
+	<menuitem id="menu_principal_infraestructura" name="Infraestructura" parent="menu_principal"/>
+	<menuitem id="menu_principal_control" name="Control" parent="menu_principal"/>
+	<menuitem id="menu_principal_reportes" name="Reportes" parent="menu_principal"/>
+
+	<menuitem id="menu_usuario" parent="menu_principal_registros" name="Registro de Usuarios" action="action_list_usuario"/>
+	<menuitem id="menu_direccion" parent="menu_principal_registros" name="Registro de Direcciones Departamentales" action="action_list_direccion"/>
+	<menuitem id="menu_dispositivo" parent="menu_principal_registros" name="Registro de Dispositivos" action="action_list_dispositivo"/>
+
+	<menuitem id="menu_reportes_pdf1" parent="menu_principal_reportes" name="Ip's asignadas/disponibles/inactivas por Vlan" action="action_list_reporte1"/>
+	<menuitem id="menu_reportes_pdf2" parent="menu_principal_reportes" name="Hostname's asignados con IP" action="action_list_reporte2"/>
+	<menuitem id="menu_reportes_pdf3" parent="menu_principal_reportes" name="Dispositivos asignados con IP" action="action_list_reporte3"/>
+
+	<menuitem id="menu_control" parent="menu_principal_control" name="Registro de Asignación" action="action_list_control"/>
+	<!-- <menuitem id="asignar_ip_dispositivo" parent="menu_principal_control" name="Asigar usuarios con dispositivos" action="action_list_asignar_ip"/> -->
+
+	<menuitem id="menu_vlan" parent="menu_principal_infraestructura" name="Registro de Vlan" action="action_list_vlan"/>
+	<menuitem id="menu_ip" parent="menu_principal_infraestructura" name="Registro de Ip" action="action_list_ip"/>
+	<menuitem id="menu_switch" parent="menu_principal_infraestructura" name="Registro de Switches" action="action_list_switch"/>
+	<menuitem id="menu_puerto" parent="menu_principal_infraestructura" name="Registro de Puertos" action="action_list_puerto"/>
+
+</odoo>

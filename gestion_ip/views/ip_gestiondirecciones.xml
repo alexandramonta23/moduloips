@@ -1,0 +1,41 @@
+<odoo>
+    <record model="ir.ui.view" id="action_vista_ip_tree">
+        <field name="name">registro.ip.tree</field>
+        <field name="model">ip.gestiondirecciones</field>
+        <field name="arch" type="xml">
+            <tree string="Tabla de ip">
+                <!-- <field name="cod_vlan" /> -->
+                <!-- <field name="name" optional="hide"/> -->
+                <field name="vlan_otro"/>
+                <field name="ip"/>
+                <field name="disponible2" />
+                <!-- <field name="vlan" optional="hide"/> -->
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="action_vista_ip_form">
+        <field name="name">registro.ip.form</field>
+        <field name="model">ip.gestiondirecciones</field>
+        <field name="arch" type="xml">
+            <form string="Formulario de ip">
+                <sheet>
+                    <group colspan="2">
+                        <group>
+                            <!-- <field name="disp_switch" widget="radio" options="{'horizontal': true}"/> -->
+                            <field name="cod_vlan"/>
+                             <!-- attrs="{'invisible': [('disp_switch', '==', 'switch')]}" -->
+                            <field name="name"/> 
+                            <!-- attrs="{'invisible': [('name', '==', '192.168.False.')]}" -->
+                            <field name="vlan_otro" invisible="1"/>
+                            <field name="ip"/>
+                            <field name="disponible2" />
+                            <field name="vlan" invisible="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+</odoo>

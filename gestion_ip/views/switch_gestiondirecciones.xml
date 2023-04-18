@@ -1,0 +1,60 @@
+<odoo>
+    <record model="ir.ui.view" id="action_vista_switch_tree">
+        <field name="name">registro.switch.tree</field>
+        <field name="model">switch.gestiondirecciones</field>
+        <field name="arch" type="xml">
+            <tree string="Tabla de switch">
+                <field name="name" />
+                <field name="ip_switch" />
+                <field name="num_serie" />
+                <field name="piso" />
+                <field name="numero_puertos" />
+                <field name="rack" />
+                <field name="stack" />
+                <field name="modelo" />
+                <field name="puert_disponibles" />
+
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="action_vista_switch_form">
+        <field name="name">registro.switch.form</field>
+        <field name="model">switch.gestiondirecciones</field>
+        <field name="arch" type="xml">
+            <form string="Formulario de switch">
+                <sheet>
+                    <group colspan="2">
+                        <group>
+                            <field name="name" />
+                            <field name="ip_switch" />
+                            <field name="piso" />
+                            <field name="numero_puertos" />
+                        </group>
+                        <group>
+                            <field name="num_serie" />
+                            <field name="rack" />
+                            <field name="stack" />
+                            <field name="modelo" />
+                        </group>
+                        <group>
+                            <field name="puert_disponibles" />
+                        </group>
+                    </group>
+                </sheet>
+
+                <!-- <sheet>
+                    <group>
+                        <field name="id_puerto">
+                            <tree>
+                                <field name="id_switch_2"/>
+                                <field name="name"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet> -->
+            </form>
+        </field>
+
+    </record>
+</odoo>

@@ -1,0 +1,36 @@
+<odoo>
+	<record model="ir.ui.view" id="action_vista_direccion_tree">
+		<field name="name">registro.direccion.tree</field>
+		<field name="model">direccion.gestiondirecciones</field>
+		<field name="arch" type="xml">
+			<tree string="Tabla de direcciones">
+				<field name="piso"/>
+				<field name="name" />
+				<field name="siglas" />
+				<field name="responsable" />
+			</tree>
+
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="action_vista_direccion_form">
+		<field name="name">registro.direccion.form</field>
+		<field name="model">direccion.gestiondirecciones</field>
+		<field name="arch" type="xml">
+			<form string="Formulario de direcciones">
+				<sheet>
+					<group colspan="2">
+						<group>
+							<field name="piso" />
+							<field name="name" />
+							<field name="siglas" />
+						</group>
+						<group>
+							<field name="responsable" />
+						</group>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+</odoo>
